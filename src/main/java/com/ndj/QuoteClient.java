@@ -1,8 +1,8 @@
 package com.ndj;
 
 
-import hello.wsdl.GetGeoIP;
-import hello.wsdl.GetGeoIPResponse;
+import net.webservicex.GetGeoIP;
+import net.webservicex.GetGeoIPResponse;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
 

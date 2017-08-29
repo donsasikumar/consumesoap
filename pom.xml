@@ -40,6 +40,28 @@
             </plugin>
             <!-- tag::wsdl[] -->
             <plugin>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-codegen-plugin</artifactId>
+                <version>3.1.12</version>
+                <executions>
+                    <execution>
+                        <id>generate-sources</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <sourceRoot>${project.build.directory}/generated-sources</sourceRoot>
+                            <wsdlOptions>
+                                <wsdlOption>
+                                    <wsdl>${basedir}/src/main/resources/myService.wsdl</wsdl>
+                                </wsdlOption>
+                            </wsdlOptions>
+                        </configuration>
+                        <goals>
+                            <goal>wsdl2java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--<plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
                 <artifactId>maven-jaxb2-plugin</artifactId>
                 <version>0.12.3</version>
@@ -55,11 +77,11 @@
                     <generatePackage>hello.wsdl</generatePackage>
                     <schemas>
                         <schema>
-                            <url>http://www.webservicex.net/geoipservice.asmx?WSDL</url>
+                            <url>http://www.webservicex.com/stockquote.asmx?WSDL</url>
                         </schema>
                     </schemas>
                 </configuration>
-            </plugin>
+            </plugin>-->
             <!-- end::wsdl[] -->
         </plugins>
     </build>
