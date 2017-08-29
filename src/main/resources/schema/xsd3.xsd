@@ -1,0 +1,23 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://towerswatson.com/rto/dpo/types/2010/01" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://towerswatson.com/rto/dpo/types/2010/01">
+    <xs:import schemaLocation="../schema/xsd1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    <xs:complexType name="ConfigurationFaultContract">
+        <xs:sequence>
+            <xs:element name="ErrorCode" type="ser:guid"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ConfigurationFaultContract" nillable="true" type="tns:ConfigurationFaultContract"/>
+    <xs:complexType name="SevereFaultContract">
+        <xs:sequence>
+            <xs:element name="ErrorCode" type="ser:guid"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="SevereFaultContract" nillable="true" type="tns:SevereFaultContract"/>
+    <xs:complexType name="PofrResponse2DataContract">
+        <xs:sequence>
+            <xs:element name="ErrorCode" nillable="true" type="xs:string"/>
+            <xs:element name="ErrorMessage" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Diagnostics" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="PofrResponse2DataContract" nillable="true" type="tns:PofrResponse2DataContract"/>
+</xs:schema>
