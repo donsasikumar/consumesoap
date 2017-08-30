@@ -1,0 +1,49 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://towerswatson.com/rto/dpo/services/2010/01" elementFormDefault="qualified" targetNamespace="http://towerswatson.com/rto/dpo/services/2010/01">
+    <xs:import schemaLocation="../schema/xsd2.xsd" namespace="http://towerswatson.com/rto/smf/types/2010/01"/>
+    <xs:import schemaLocation="../schema/xsd1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    <xs:import schemaLocation="../schema/xsd3.xsd" namespace="http://towerswatson.com/rto/dpo/types/2010/01"/>
+    <xs:element name="PofRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element xmlns:q1="http://towerswatson.com/rto/smf/types/2010/01" minOccurs="0" name="PofrCollection" nillable="true" type="q1:PofrInformationCollectionDataContract"/>
+                <xs:element minOccurs="0" name="Time" type="xs:dateTime"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PofResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string"/>
+                <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string"/>
+                <xs:element xmlns:q2="http://towerswatson.com/rto/smf/types/2010/01" minOccurs="0" name="PofCollection" nillable="true" type="q2:PofInformationCollectionDataContract"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PofRequestUsingMasterSet">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="Time" type="xs:dateTime"/>
+                <xs:element xmlns:q3="http://towerswatson.com/rto/smf/types/2010/01" minOccurs="0" name="PofrCollection" nillable="true" type="q3:PofrInformationCollectionDataContract"/>
+                <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="MasterSetId" type="q4:guid"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PofResponse2">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element xmlns:q5="http://towerswatson.com/rto/dpo/types/2010/01" minOccurs="0" name="MetaData" nillable="true" type="q5:PofrResponse2DataContract"/>
+                <xs:element xmlns:q6="http://towerswatson.com/rto/smf/types/2010/01" minOccurs="0" name="PofCollection" nillable="true" type="q6:PofInformationCollectionDataContract"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PofRequestUsingKey">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="Time" type="xs:dateTime"/>
+                <xs:element xmlns:q7="http://towerswatson.com/rto/smf/types/2010/01" minOccurs="0" name="PofrCollection" nillable="true" type="q7:PofrInformationCollectionDataContract"/>
+                <xs:element minOccurs="0" name="KeyName" nillable="true" type="xs:string"/>
+                <xs:element minOccurs="0" name="KeyRequestTime" nillable="true" type="xs:dateTime"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

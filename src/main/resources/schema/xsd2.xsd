@@ -1,0 +1,70 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://towerswatson.com/rto/smf/types/2010/01" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://towerswatson.com/rto/smf/types/2010/01">
+    <xs:import schemaLocation="../schema/xsd1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    <xs:complexType name="PofrInformationCollectionDataContract">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="PofrInformationDataContract" nillable="true" type="tns:PofrInformationDataContract"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="PofrInformationCollectionDataContract" nillable="true" type="tns:PofrInformationCollectionDataContract"/>
+    <xs:complexType name="PofrInformationDataContract">
+        <xs:sequence>
+            <xs:element name="Pofr" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="PofrInformationDataContract" nillable="true" type="tns:PofrInformationDataContract"/>
+    <xs:complexType name="PofInformationCollectionDataContract">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="PofInformationDataContract" nillable="true" type="tns:PofInformationDataContract"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="PofInformationCollectionDataContract" nillable="true" type="tns:PofInformationCollectionDataContract"/>
+    <xs:complexType name="PofInformationDataContract">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="Pof" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="MIDataCollection" nillable="true" type="tns:MIDataCollectionDataContract"/>
+            <xs:element minOccurs="0" name="PofMetadata" nillable="true" type="tns:PofMetadataDataContract"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="PofInformationDataContract" nillable="true" type="tns:PofInformationDataContract"/>
+    <xs:complexType name="MIDataCollectionDataContract">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="MIDataDataContract" nillable="true" type="tns:MIDataDataContract"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="MIDataCollectionDataContract" nillable="true" type="tns:MIDataCollectionDataContract"/>
+    <xs:complexType name="MIDataDataContract">
+        <xs:sequence>
+            <xs:element name="Name" nillable="true" type="xs:string"/>
+            <xs:element name="DataType" type="tns:DataType"/>
+            <xs:element name="Data" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="MIDataDataContract" nillable="true" type="tns:MIDataDataContract"/>
+    <xs:simpleType name="DataType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Undefined"/>
+            <xs:enumeration value="Int32"/>
+            <xs:enumeration value="Float"/>
+            <xs:enumeration value="String"/>
+            <xs:enumeration value="Boolean"/>
+            <xs:enumeration value="DateTime"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="DataType" nillable="true" type="tns:DataType"/>
+    <xs:complexType name="PofMetadataDataContract">
+        <xs:sequence>
+            <xs:element name="ScheduleId" type="ser:guid"/>
+            <xs:element name="MasterSetId" type="ser:guid"/>
+            <xs:element name="StrategyIndex" nillable="true" type="xs:int"/>
+            <xs:element name="ConfigSetId" nillable="true" type="ser:guid"/>
+            <xs:element minOccurs="0" name="ModelRevisionId" nillable="true" type="ser:guid"/>
+            <xs:element minOccurs="0" name="RequestedMasterSetId" nillable="true" type="ser:guid"/>
+            <xs:element minOccurs="0" name="ScheduleAliasOfId" nillable="true" type="ser:guid"/>
+            <xs:element minOccurs="0" name="KeyName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="KeyStartTime" nillable="true" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="PofMetadataDataContract" nillable="true" type="tns:PofMetadataDataContract"/>
+</xs:schema>
