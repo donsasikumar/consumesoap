@@ -8,7 +8,8 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
  * Created by don on 28/08/2017.
  */
 @Configuration
-public class QuoteConfiguration {
+public class RadarConfiguration
+{
 
     @Bean
     public Jaxb2Marshaller marshaller() {
@@ -20,8 +21,8 @@ public class QuoteConfiguration {
     }
 
     @Bean
-    public QuoteClient quoteClient(Jaxb2Marshaller marshaller) {
-        QuoteClient client = new QuoteClient();
+    public RadarClient quoteClient(Jaxb2Marshaller marshaller) {
+        RadarClient client = new RadarClient();
         client.setDefaultUri("http://esu-rl-smf1.northeurope.cloudapp.azure.com:3760/DpoService.svc");
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);

@@ -311,23 +311,542 @@
          <ns:PofrCollection>
             <ns1:PofrInformationDataContract>
                <ns1:Pofr><![CDATA[<root>
-<Quote>
-<HaveBoughtCar value="true" />
-<RegNumber value="a" />
-<CarMake value="b" />
-<EngineSize value="1" />
-<YearOfManufacture value="2001" />
-<RightHandDrive value="true" />
-<Transmission value="Manual" />
-<NumberOfDoors value="3" />
-<CarType value="Saloon" />
-<WhoOwnsCar value="Policy Holder" />
-<PurchaseDate value="2002-01-01T00:00:00" />
-<Value value="2003" />
-<IsImport value="UK Model" />
-<AnyModifications value="false" />
-<NumberOfSeats value="4" />
-</Quote>
+<Policy>
+    <!-- This is intended as the Primary Key -->
+    <PolicyReference value="I1589205361"/>
+    <!-- Optional -->
+    <IbisQuoteReference value="1589205361"/>
+    <!-- Optional -->
+    <TiaAgreementLineSeqNumber value="928340162874"/>
+    <!-- Optional -->
+    <TiaPolicyNumber value="1000267"/>
+    <!-- Not sure rateSetId will be requied by Radar. For NB/Renewals this will 0 -->
+    <RateSetID value="10235"/>
+    <!-- This will be included in the outer XML message, not sure it will be required by RADAR as it will be known -->
+    <RadarMasterSetId value="06636ea7-b12c-4afa-b64e-7e6fd263f783"/>
+    <LineId value="ESHOM"/>
+    <UwCode value="ES"/>
+    <ChannelRatingFactor value="Y"/>
+    <ChannelCode value="W"/>
+    <!-- Optional -->
+    <SchemeCode value="D007"/>
+    <TransactionCode value="10"/>
+    <PolicyYear value="1"/>
+    <StartDate value="2017-06-30"/>
+    <EffectiveDate value="2017-06-30"/>
+    <!-- Optional -->
+    <AggregatorId value="MSM"/>
+    <ClaimScore value="0"/>
+    <PreferredPayMethod value="99"/>
+    <CurrentPriceOptimisationFactor value="0.99"/>
+    <!-- Optional -->
+    <PreviousPriceOptimisationFactor value="1.01"/>
+    <PriceTestLevel value="50"/>
+    <RadarPriceTestLevel value="50"/>
+    <YearsWithPreviousInsurer value="1"/>
+    <NumberOfAdults value="1"/>
+    <NumberOfChildren value="3"/>
+    <ProtectNcd value="false"/>
+    <AddonYearTvl value="1"/>
+    <AddonYearWin value="1"/>
+    <!-- First Start Date and First Quote Date are used to calculate the Quote to Inception attributes. -->
+    <!-- Need to confirm if we need to provide all information below -->
+    <FirstQuoteDate value="2017-06-30"/>
+    <FirstStartDate value="2017-06-30"/>
+    <QuoteToInceptionHours value="1"/>
+    <QuoteToInceptionCode value="001H"/>
+    <!-- Indicator List -->
+    <BuildingsIndicator value="false"/>
+    <ContentsIndicator value="false"/>
+    <PersonalPossessionsIndicator value="false"/>
+    <SpecifiedItemsIndicator value="false"/>
+    <FamilyLegalProtectionIndicator value="false"/>
+    <HomeAssistIndicator value="false"/>
+    <PestIndicator value="false"/>
+    <TravelIndicator value="false"/>
+    <WinterSportsIndicator value="false"/>
+    <!-- Previous Prices List -->
+    <BuildingsLastInceptedPrice value="123.45"/>
+    <BuildingsLatestPrice value="123.45"/>
+    <ContentsLastInceptedPrice value="65.43"/>
+    <ContentsLatestPrice value="98.76"/>
+    <PersonalPossessionsLastInceptedPrice value="34.56"/>
+    <PersonalPossessionsLatestPrice value="45.67"/>
+    <SpecifiedItemsLastInceptedPrice value="0.00"/>
+    <SpecifiedItemsLatestPrice value="0.00"/>
+    <FamilyLegalProtectionLastInceptedPrice value="29.99"/>
+    <FamilyLegalProtectionLatestPrice value="29.99"/>
+    <HomeEmergencyLastInceptedPrice value="19.99"/>
+    <HomeEmergencyLatestPrice value="19.99"/>
+    <PestLastInceptedPrice value="24.99"/>
+    <PestLatestPrice value="24.99"/>
+    <TravelLastInceptedPrice value="66.99"/>
+    <TravelLatestPrice value="75.45"/>
+    <WinterSportsLastInceptedPrice value="123.45"/>
+    <WinterSportsLatestPrice value="123.45"/>
+    <LastInceptedPriceTotal value="123.45"/>
+    <LatestPriceTotal value="123.45"/>
+    <!-- Optional -->
+    <BuildingCover>
+        <AccidentalDamage value="false"/>
+        <SumsInsured value="124600"/>
+        <UwDiscount value="1.0"/>
+        <VoluntaryExcessCode value="100"/>
+    </BuildingCover>
+    <!-- Optional -->
+    <ContentCover>
+        <AccidentalDamage value="false"/>
+        <HouseholdGoodsSumsInsured value="14500"/>
+        <HighRiskItemsSumsInsured value="7300"/>
+        <PersonalPossessionsSumsInsured value="0"/>
+        <UwDiscount value="1.0"/>
+        <VoluntaryExcessCode value="50"/>
+        <!-- Optional -->
+        <SpecifiedItems>
+            <SpecifiedItem>
+                <TypeCode value="ANT"/>
+                <SumInsuredAmount value="1500"/>
+            </SpecifiedItem>
+            <SpecifiedItem>
+                <TypeCode value="BNK"/>
+                <SumInsuredAmount value="1500"/>
+            </SpecifiedItem>
+            <SpecifiedItem>
+                <TypeCode value="CTL"/>
+                <SumInsuredAmount value="1501"/>
+            </SpecifiedItem>
+            <SpecifiedItem>
+                <TypeCode value="CYC"/>
+                <SumInsuredAmount value="1502"/>
+            </SpecifiedItem>
+            <SpecifiedItem>
+                <TypeCode value="FUR"/>
+                <SumInsuredAmount value="1503"/>
+            </SpecifiedItem>
+            <SpecifiedItem>
+                <TypeCode value="JWL"/>
+                <SumInsuredAmount value="1504"/>
+            </SpecifiedItem>
+            <SpecifiedItem>
+                <TypeCode value="PNT"/>
+                <SumInsuredAmount value="1505"/>
+            </SpecifiedItem>
+            <SpecifiedItem>
+                <TypeCode value="OTH"/>
+                <SumInsuredAmount value="1506"/>
+            </SpecifiedItem>
+        </SpecifiedItems>
+    </ContentCover>
+    <Insured>
+        <Age value="37"/>
+        <Gender value="F"/>
+        <MaritalStatusCode value="1"/>
+        <NcdYears value="7"/>
+        <OccupationCode value="*10"/>
+        <OccupationSegmentCode value="15"/>
+        <DelphiBlock>
+            <BespokeArray value="[]"/>
+            <E1A01 value="0"/>
+            <E1A02 value="0"/>
+            <E1A03 value="0"/>
+            <E1A04 value="0"/>
+            <E1A05 value="0"/>
+            <E1A06 value="0"/>
+            <E1A07 value="0"/>
+            <E1A08 value="0"/>
+            <E1A09 value="0"/>
+            <E1A10 value="0"/>
+            <E1A11 value="0"/>
+            <E1B01 value="0"/>
+            <E1B02 value="0"/>
+            <E1B03 value="N"/>
+            <E1B04 value="0"/>
+            <E1B05 value="N"/>
+            <E1B06 value="0"/>
+            <E1B07 value="N"/>
+            <E1B08 value="N"/>
+            <E1B09 value="4"/>
+            <E1B10 value="0"/>
+            <E1B11 value="0"/>
+            <E1B12 value="0"/>
+            <E1B13 value="0"/>
+            <E1C01 value="N"/>
+            <E1C02 value="0"/>
+            <E1C03 value="0"/>
+            <E1C04 value="0"/>
+            <E1C05 value="0"/>
+            <E1C06 value="0"/>
+            <E1D01 value="0"/>
+            <E1D02 value="0"/>
+            <E1D03 value="0"/>
+            <E1D04 value="0"/>
+            <E1E01 value="0"/>
+            <E1E02 value="0"/>
+            <E2G01 value="0"/>
+            <E2G02 value="0"/>
+            <E2G03 value="0"/>
+            <E2G04 value="0"/>
+            <E2G05 value="0"/>
+            <E2G06 value="0"/>
+            <E2G07 value="0"/>
+            <E2G08 value="0"/>
+            <E2G09 value="0"/>
+            <E2G10 value="0"/>
+            <E2G11 value="0"/>
+            <E2H01 value="0"/>
+            <E2H02 value="0"/>
+            <E2H03 value="N"/>
+            <E2H04 value="0"/>
+            <E2H05 value="N"/>
+            <E2H06 value="0"/>
+            <E2H07 value="N"/>
+            <E2H08 value="N"/>
+            <E2H09 value="0"/>
+            <E2H10 value="0"/>
+            <E2H11 value="0"/>
+            <E2H12 value="0"/>
+            <E2H13 value="0"/>
+            <E2I01 value="N"/>
+            <E2I02 value="0"/>
+            <E2I03 value="0"/>
+            <E2I04 value="0"/>
+            <E2I05 value="0"/>
+            <E2I06 value="0"/>
+            <E2J01 value="0"/>
+            <E2J02 value="0"/>
+            <E2J03 value="0"/>
+            <E2J04 value="0"/>
+            <E2K01 value="0"/>
+            <E2K02 value="0"/>
+            <E4Q01 value="1"/>
+            <E4Q02 value="1"/>
+            <E4Q03 value="1"/>
+            <E4Q04 value="1"/>
+            <E4Q05 value="5"/>
+            <E4Q06 value="5"/>
+            <E4Q07 value="0"/>
+            <E4Q08 value="0"/>
+            <E4Q09 value="5"/>
+            <E4Q10 value="5"/>
+            <E4Q11 value="0"/>
+            <E4Q12 value="0"/>
+            <E4Q13 value="5"/>
+            <E4Q14 value="5"/>
+            <E4Q15 value="0"/>
+            <E4Q16 value="0"/>
+            <E4Q17 value="2"/>
+            <E4Q18 value="1"/>
+            <E4R01 value="1"/>
+            <E4R02 value="BR13TG"/>
+            <E4R03 value="1"/>
+            <E5S01 value="1"/>
+            <E5S02 value="1"/>
+            <E5S041 value="90"/>
+            <E5S042 value="0"/>
+            <E5S043 value="0"/>
+            <E5S051 value="951"/>
+            <E5S052 value="792"/>
+            <E5S053 value="954"/>
+            <EA1A01 value="N"/>
+            <EA1B01 value="0"/>
+            <EA1B02 value="0"/>
+            <EA1C01 value="N"/>
+            <EA1C02 value="N"/>
+            <EA1D01 value="1"/>
+            <EA1D02 value="0"/>
+            <EA1D03 value="0"/>
+            <EA1E01 value="0"/>
+            <EA1E02 value="0"/>
+            <EA1E03 value="0"/>
+            <EA1E04 value="0"/>
+            <EA1F01 value="N"/>
+            <EA1F02 value="N"/>
+            <EA1F03 value="N"/>
+            <EA1F04 value="1"/>
+            <EA1G01 value="N"/>
+            <EA1G02 value="N"/>
+            <EA2G01 value="N"/>
+            <EA2H01 value="0"/>
+            <EA2H02 value="0"/>
+            <EA2I01 value="N"/>
+            <EA2I02 value="N"/>
+            <EA2I04 value="1"/>
+            <EA2J01 value="0"/>
+            <EA2J02 value="0"/>
+            <EA2J03 value="0"/>
+            <EA2K01 value="0"/>
+            <EA2K02 value="0"/>
+            <EA2K03 value="0"/>
+            <EA2K04 value="0"/>
+            <EA2L01 value="1"/>
+            <EA2L02 value="N"/>
+            <EA2L03 value="N"/>
+            <EA2M01 value="N"/>
+            <EA2M02 value="1"/>
+            <EA2Q01 value="3"/>
+            <EA2Q02 value="0"/>
+            <EA4M01 value="9047"/>
+            <EA4M02 value="476"/>
+            <EA4M03 value="0"/>
+            <EA4M04 value="100"/>
+            <EA4M05 value="2075"/>
+            <EA4M06 value="669"/>
+            <EA4M07 value="31"/>
+            <EA4M08 value="0"/>
+            <EA4M09 value="0"/>
+            <EA4M10 value="0"/>
+            <EA4M11 value="0"/>
+            <EA4M12 value="0"/>
+            <EA4N01 value="3408"/>
+            <EA4N02 value="1875"/>
+            <EA4N03 value="1623"/>
+            <EA4N04 value="-255"/>
+            <EA4N05 value="3923"/>
+            <EA4P01 value="N"/>
+            <EA4Q01 value="N"/>
+            <EA4Q02 value="N"/>
+            <EA4Q03 value="N"/>
+            <EA4Q04 value="N"/>
+            <EA4Q05 value="N"/>
+            <EA4Q06 value="N"/>
+            <EA4Q07 value="N"/>
+            <EA4Q08 value="N"/>
+            <EA4Q09 value="N"/>
+            <EA4Q10 value="N"/>
+            <EA4Q11 value="N"/>
+            <EA4R01CJ value="0"/>
+            <EA4R01PJ value="0"/>
+            <EA4R01PM value="0"/>
+            <EA4S01 value="0"/>
+            <EA4S02 value="1"/>
+            <EA4S03 value="1"/>
+            <EA4S04 value="05/12/88"/>
+            <EA4S05 value="0"/>
+            <EA4S06 value="1"/>
+            <EA4S07 value="1"/>
+            <EA4S08 value="05/12/88"/>
+            <EA4T01 value="3"/>
+            <EA5S01 value="40"/>
+            <EA5T01 value="0"/>
+            <EA5T02 value="12"/>
+            <EA5U01 value="2"/>
+            <EA5U02 value="0"/>
+            <HHOScore value="1"/>
+            <NDDIRSP value="N"/>
+            <NDDIRSPA value="N"/>
+            <NDDOB value="17/12/72"/>
+            <NDECC01 value="0"/>
+            <NDECC02 value="0"/>
+            <NDECC03 value="0"/>
+            <NDECC04 value="0"/>
+            <NDECC05 value="0"/>
+            <NDECC06 value="0"/>
+            <NDECC07 value="0"/>
+            <NDECC08 value="0"/>
+            <NDECC09 value="0"/>
+            <NDECC10 value="0"/>
+            <NDERL01 value="0"/>
+            <NDERL02 value="0"/>
+            <NDERLJACA value="1"/>
+            <NDERLJAPA value="1"/>
+            <NDERLMACA value="C"/>
+            <NDERLMAPA value="1"/>
+            <NDFCS01 value="1"/>
+            <NDFCS02 value="1"/>
+            <NDG01 value="5"/>
+            <NDG02 value="808"/>
+            <NDG03 value="19"/>
+            <NDG04 value="476"/>
+            <NDG05 value="0"/>
+            <NDG06 value="0"/>
+            <NDG07 value="0"/>
+            <NDG08 value="0"/>
+            <NDG09 value="0"/>
+            <NDG10 value="0"/>
+            <NDG11 value="0"/>
+            <NDG12 value="0"/>
+            <NDHAC01 value="0"/>
+            <NDHAC02 value="0"/>
+            <NDHAC03 value="0"/>
+            <NDHAC04 value="0"/>
+            <NDHAC05 value="0"/>
+            <NDHAC06 value="0"/>
+            <NDHAC07 value="0"/>
+            <NDHAC08 value="0"/>
+            <NDHAC09 value="0"/>
+            <NDHAC10 value="0"/>
+            <NDHHO value="N"/>
+            <NDHHOSCORE value="-999"/>
+            <NDINC01 value="1"/>
+            <NDINC02 value="0"/>
+            <NDINC03 value="0"/>
+            <NDLNK01 value="2"/>
+            <NDOPTOUT value="N"/>
+            <NDOPTOUTVALID value="1"/>
+            <NDPA value="1"/>
+            <NDPSD01 value="0"/>
+            <NDPSD02 value="0"/>
+            <NDPSD03 value="0"/>
+            <NDPSD04 value="0"/>
+            <NDPSD05 value="0"/>
+            <NDPSD06 value="0"/>
+            <NDPSD07 value="0"/>
+            <NDPSD08 value="0"/>
+            <NDPSD09 value="0"/>
+            <NDPSD10 value="0"/>
+            <NDPSD11 value="0"/>
+            <NDSI21 value="90CON"/>
+            <NDSI22 value="90CON"/>
+            <NDSI23 value="1"/>
+            <NDSPACII value="-2"/>
+            <NDSPCII value="-9"/>
+            <NDVALSCORE value="0"/>
+            <SPA01 value="N"/>
+            <SPA02 value="N"/>
+            <SPA03 value="N"/>
+            <SPA04 value="N"/>
+            <SPA05 value="N"/>
+            <SPA06 value="N"/>
+            <SPA07 value="N"/>
+            <SPA08 value="N"/>
+            <SPA09 value="N"/>
+            <SPA10 value="N"/>
+            <SPAA01 value="N"/>
+            <SPAA02 value="N"/>
+            <SPAA03 value="N"/>
+            <SPAA04 value="N"/>
+            <SPAA05 value="N"/>
+            <SPAA06 value="N"/>
+            <SPAA07 value="N"/>
+            <SPAA08 value="N"/>
+            <SPAA09 value="N"/>
+            <SPAA10 value="N"/>
+            <SPAB111 value="N"/>
+            <SPAB112 value="N"/>
+            <SPAB113 value="N"/>
+            <SPAB114 value="N"/>
+            <SPAB115 value="N"/>
+            <SPAB116 value="N"/>
+            <SPAB117 value="N"/>
+            <SPAB218 value="N"/>
+            <SPAB219 value="N"/>
+            <SPAB220 value="N"/>
+            <SPAB221 value="N"/>
+            <SPAB322 value="N"/>
+            <SPAB323 value="N"/>
+            <SPABRPRESENT value="N"/>
+            <SPAC24 value="N"/>
+            <SPACIICHECKDIGIT value="N"/>
+            <SPAD25 value="N"/>
+            <SPAE126 value="N"/>
+            <SPAE127 value="N"/>
+            <SPAE128 value="N"/>
+            <SPAF129 value="N"/>
+            <SPAF130 value="N"/>
+            <SPAF131 value="N"/>
+            <SPAF232 value="N"/>
+            <SPAF233 value="N"/>
+            <SPAF334 value="N"/>
+            <SPAF335 value="N"/>
+            <SPAF336 value="N"/>
+            <SPAG37 value="N"/>
+            <SPAG38 value="N"/>
+            <SPAH39 value="N"/>
+            <SPAH40 value="N"/>
+            <SPAH41 value="N"/>
+            <SPB111 value="N"/>
+            <SPB112 value="N"/>
+            <SPB113 value="N"/>
+            <SPB114 value="N"/>
+            <SPB115 value="N"/>
+            <SPB116 value="N"/>
+            <SPB117 value="N"/>
+            <SPB218 value="N"/>
+            <SPB219 value="N"/>
+            <SPB220 value="N"/>
+            <SPB221 value="N"/>
+            <SPB322 value="N"/>
+            <SPB323 value="N"/>
+            <SPBRPRESENT value="N"/>
+            <SPC24 value="N"/>
+            <SPCIICHECKDIGIT value="N"/>
+            <SPD25 value="N"/>
+            <SPE126 value="N"/>
+            <SPE127 value="N"/>
+            <SPE128 value="N"/>
+            <SPF129 value="N"/>
+            <SPF130 value="N"/>
+            <SPF131 value="N"/>
+            <SPF232 value="N"/>
+            <SPF233 value="N"/>
+            <SPF334 value="N"/>
+            <SPF335 value="N"/>
+            <SPF336 value="N"/>
+            <SPG37 value="73"/>
+            <SPG38 value="54"/>
+            <SPH39 value="N"/>
+            <SPH40 value="N"/>
+            <SPH41 value="N"/>
+            <UKMOSAIC value="1"/>
+            <DelphiStatus value="OK"/>
+        </DelphiBlock>
+    </Insured>
+    <!-- Optional -->
+    <JointProposer>
+        <Age value="37"/>
+        <Gender value="F"/>
+        <MaritalStatusCode value="1"/>
+        <NcdYears value="7"/>
+        <OccupationCode value="*10"/>
+        <OccupationSegmentCode value="15"/>
+    </JointProposer>
+    <Properties>
+        <Property>
+            <PropertyId value="1"/>
+            <AlarmBurgler value="false"/>
+            <NumberOfBedrooms value="3"/>
+            <OwnershipTypeCode value="MNL"/>
+            <PropertyTypeCode value="THE"/>
+            <RiskPostCode value="BR13TG"/>
+            <RoofConstructionCode value="STA"/>
+            <WallConstructionCode value="STA"/>
+            <WindowDoorLocks value="true"/>
+            <YearOfConstruction value="1980"/>
+            <GeoAttributes>
+                <!-- Special Term 1 -->
+                <TheftAreaRating value="19"/>
+                <!-- Special Term 2 -->
+                <SubsidenceAreaRating value="78"/>
+                <!-- Special Term 3 -->
+                <WealthAreaRating value="44"/>
+                <!-- Special Term 4 -->
+                <FloodAreaRating value="16"/>
+                <!-- Special Term 5 -->
+                <TvRegion value="CAR"/>
+                <!-- Special Term 6 -->
+                <NumberOfBedrooms value="3"/>
+                <!-- Special Term 7 -->
+                <YearOfConstruction value="1979"/>
+                <!-- Special Term 8 -->
+                <PropertyTypeCode value="THE"/>
+                <!-- Special Term 9 -->
+                <ReferFloodRisk value="N"/>
+                <!-- Special Term 10 -->
+                <ReferSubsidenceRisk value="N"/>
+                <!-- Special Term 11 -->
+                <MinimumSecurityRequirement/>
+                <!-- Special Term 12 -->
+                <BasicBuildingsSumInsured value="110200"/>
+                <!-- Special Term 13 -->
+                <BasicContentsSumInsured value="23200"/>
+                <!-- Special Term 14 -->
+                <AccidentalDamageAreaRating value="52"/>
+                <!-- Special Term 15 -->
+                <EscapeOfWaterAreaRating value="16"/>
+            </GeoAttributes>
+        </Property>
+    </Properties>
+</Policy>
 </root>]]]]>><![CDATA[</ns1:Pofr>
             </ns1:PofrInformationDataContract>
          </ns:PofrCollection>

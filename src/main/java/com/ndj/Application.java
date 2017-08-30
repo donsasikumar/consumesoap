@@ -17,7 +17,7 @@ public class Application {
     }
 
     @Bean
-    CommandLineRunner lookup(QuoteClient quoteClient) {
+    CommandLineRunner lookup(RadarClient quoteClient) {
         return args -> {
             PofResponse response = new PofResponse();
             System.err.println(response.getPofCollection());
