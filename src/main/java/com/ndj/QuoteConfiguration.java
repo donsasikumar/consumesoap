@@ -15,14 +15,14 @@ public class QuoteConfiguration {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
         // this package must match the package in the <generatePackage> specified in
         // pom.xml
-        marshaller.setContextPath("net.webservicex");
+        marshaller.setContextPath("com.towerswatson.rto.dpo.services._2010._01");
         return marshaller;
     }
 
     @Bean
     public QuoteClient quoteClient(Jaxb2Marshaller marshaller) {
         QuoteClient client = new QuoteClient();
-        client.setDefaultUri("http://www.webservicex.net/geoipservice.asmx");
+        client.setDefaultUri("http://esu-rl-smf1.northeurope.cloudapp.azure.com:3760/DpoService.svc");
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;

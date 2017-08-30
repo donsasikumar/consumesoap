@@ -30,6 +30,11 @@
             <groupId>org.springframework.ws</groupId>
             <artifactId>spring-ws-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.9</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -48,7 +53,7 @@
                         <id>generate-sources</id>
                         <phase>generate-sources</phase>
                         <configuration>
-                            <sourceRoot>${project.build.directory}/generated-sources</sourceRoot>
+                            <sourceRoot>${basedir}/src/main/java</sourceRoot>
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${basedir}/src/main/resources/myService.wsdl</wsdl>
