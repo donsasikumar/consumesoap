@@ -1,7 +1,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://towerswatson.com/rto/dpo/services/2010/01" elementFormDefault="qualified" targetNamespace="http://towerswatson.com/rto/dpo/services/2010/01">
-    <xs:import schemaLocation="../schema/xsd2.xsd" namespace="http://towerswatson.com/rto/smf/types/2010/01"/>
-    <xs:import schemaLocation="../schema/xsd1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
-    <xs:import schemaLocation="../schema/xsd3.xsd" namespace="http://towerswatson.com/rto/dpo/types/2010/01"/>
+    <xs:import schemaLocation="xsd2.xsd" namespace="http://towerswatson.com/rto/smf/types/2010/01"/>
+    <xs:import schemaLocation="xsd1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    <xs:import schemaLocation="xsd3.xsd" namespace="http://towerswatson.com/rto/dpo/types/2010/01"/>
     <xs:element name="PofRequest">
         <xs:complexType>
             <xs:sequence>

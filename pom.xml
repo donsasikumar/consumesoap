@@ -42,7 +42,7 @@
             <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
                 <artifactId>maven-jaxb2-plugin</artifactId>
-                <version>0.12.3</version>
+                <version>0.13.1</version>
                 <executions>
                     <execution>
                         <goals>
@@ -51,15 +51,12 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <schemaLanguage>WSDL</schemaLanguage>
-                    <generatePackage>hello.wsdl</generatePackage>
-                    <schemas>
-                        <schema>
-                            <url>http://www.webservicex.net/geoipservice.asmx?WSDL</url>
-                        </schema>
-                    </schemas>
+                    <schemaLanguage>AUTODETECT</schemaLanguage>
+                    <schemaDirectory>src/main/resources/wsdl</schemaDirectory>
+                    <generateDirectory>${project.build.directory}/generated-sources/xjc</generateDirectory>
                 </configuration>
             </plugin>
+
             <!-- end::wsdl[] -->
         </plugins>
     </build>

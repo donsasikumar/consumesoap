@@ -8,10 +8,10 @@
 </wsp:Policy>
 <wsdl:types>
 <xsd:schema targetNamespace="http://towerswatson.com/rto/dpo/services/2010/01/Imports">
-<xsd:import schemaLocation="../schema/xsd0.xsd" namespace="http://towerswatson.com/rto/dpo/services/2010/01"/>
-<xsd:import schemaLocation="../schema/xsd3.xsd" namespace="http://towerswatson.com/rto/dpo/types/2010/01"/>
-<xsd:import schemaLocation="../schema/xsd1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
-<xsd:import schemaLocation="../schema/xsd2.xsd" namespace="http://towerswatson.com/rto/smf/types/2010/01"/>
+<xsd:import schemaLocation="xsd0.xsd" namespace="http://towerswatson.com/rto/dpo/services/2010/01"/>
+<xsd:import schemaLocation="xsd3.xsd" namespace="http://towerswatson.com/rto/dpo/types/2010/01"/>
+<xsd:import schemaLocation="xsd1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+<xsd:import schemaLocation="xsd2.xsd" namespace="http://towerswatson.com/rto/smf/types/2010/01"/>
 </xsd:schema>
 </wsdl:types>
 <wsdl:message name="PofRequest">
@@ -118,9 +118,9 @@
 </wsdl:binding>
 <wsdl:service name="DpoService">
 <wsdl:port name="DefaultDpoServiceEndpoint" binding="tns:DefaultDpoServiceEndpoint">
-<soap12:address location="http://esu-rl-smf1:3760/DpoService.svc"/>
+<soap12:address location="http://esu-rl-smf1.northeurope.cloudapp.azure.com:3760/DpoService.svc"/>
 <wsa10:EndpointReference>
-<wsa10:Address>http://esu-rl-smf1:3760/DpoService.svc</wsa10:Address>
+<wsa10:Address>http://esu-rl-smf1.northeurope.cloudapp.azure.com:3760/DpoService.svc</wsa10:Address>
 </wsa10:EndpointReference>
 </wsdl:port>
 </wsdl:service>

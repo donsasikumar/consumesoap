@@ -1,7 +1,6 @@
 package com.ndj;
 
-
-import hello.wsdl.GetGeoIPResponse;
+import com.towerswatson.rto.dpo.services._2010._01.PofResponse;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,17 +16,16 @@ public class Application {
     }
 
     @Bean
-    CommandLineRunner lookup(QuoteClient quoteClient) {
+    CommandLineRunner lookup(RadarClient radarClient) {
         return args -> {
-            String ticker = "UK";
 
-            if (args.length > 0) {
-                ticker = args[0];
-            }
-            GetGeoIPResponse response = quoteClient.getQuote(ticker);
-            System.err.println(response.getGetGeoIPResult().getCountryName());
-            System.err.println(response.getGetGeoIPResult().getReturnCode());
-            System.err.println(response.getGetGeoIPResult().getReturnCodeDetails());
+            PofResponse response = radarClient.getQuote();
+            System.err.println("PofResponse - getErrorCode().getName()               -> "+response.getErrorCode().getName());
+            System.err.println("PofResponse - response.getErrorCode().getValue()     ->"+response.getErrorCode().getValue());
+            System.err.println("PofResponse - response.getErrorMessage().getValue()  ->"+response.getErrorMessage().getValue());
+            System.err.println("PofResponse - response.getErrorMessage().getValue()  ->"+response.getErrorMessage().getValue());
+            System.err.println("PofResponse - response.getPofCollection().getValue() ->"+response.getPofCollection().getValue());
+            System.err.println("PofResponse - response.getPofCollection().getName()  ->"+response.getPofCollection().getName());
         };
     }
 }
